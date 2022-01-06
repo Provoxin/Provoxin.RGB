@@ -24,11 +24,11 @@
 			"DefaultValue": "0.8 0.25 0.15 8"
 		},
 		{
-			"Name": "rgb_ally_enabled",  // whether allies will cycle through colors
+			"Name": "rgb_ally_rainbow",  // whether allies will cycle through colors
 			"DefaultValue": "1"
 		},
 		{
-			"Name": "rgb_enemy_enabled",  // whether enemies will cycle through colors
+			"Name": "rgb_enemy_rainbow",  // whether enemies will cycle through colors
 			"DefaultValue": "1"
 		},
 		{

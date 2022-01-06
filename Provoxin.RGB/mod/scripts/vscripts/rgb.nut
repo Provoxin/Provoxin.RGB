@@ -64,7 +64,7 @@ void function rgb()
 		g = clamp(g, 0, 1);
 		b = clamp(b, 0, 1);
 
-		if (GetConVarBool("rgb_ally_enabled"))
+		if (GetConVarBool("rgb_ally_rainbow"))
 		{
 			SetConVarString("idcolor_ally", r + " " + g + " " + b + " " + GetConVarString("rgb_ally_brightness"));
 		}
@@ -75,7 +75,7 @@ void function rgb()
 			SetConVarString("idcolor_ally", col)
 		}
 
-		if (GetConVarBool("rgb_enemy_enabled"))
+		if (GetConVarBool("rgb_enemy_rainbow"))
 		{
 			SetConVarString("idcolor_enemy", r + " " + g + " " + b + " " + GetConVarString("rgb_enemy_brightness"));
 		}

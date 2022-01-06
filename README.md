@@ -9,12 +9,12 @@ convars (press ~ to open the console and set these in real time):
 
 `rgb_enemy_color`: sets the lights color of enemy pilots and titans. takes r, g, b as a value from 0-1, and brightness. Example: `rgb_enemy_color 0.5 0 0 4` (dim dark red); `rgb_enemy_color default` will set light colors to default.
 
-`rgb_ally_enabled`: whether the lights of allied pilots and titans will cycle through colors. set to `1` to enable and `0` to disable.
+`rgb_ally_rainbow`: whether the lights of allied pilots and titans will cycle through colors. set to `1` to enable and `0` to disable.
 
-`rgb_enemy_enabled`: whether the lights of enemy pilots and titans will cycle through colors. set to `1` to enable and `0` to disable.
+`rgb_enemy_rainbow`: whether the lights of enemy pilots and titans will cycle through colors. set to `1` to enable and `0` to disable.
 
 `rgb_cycle_speed`: how quickly colors are cycled through for players who have color cycling enabled. higher values will cycle faster.
 
-`rgb_ally_brightness`: sets the brightness of allied pilot and titan lights if `rgb_ally_enabled` is `1`.
+`rgb_ally_brightness`: sets the brightness of allied pilot and titan lights if `rgb_ally_rainbow` is `1`.
 
-`rgb_enemy_brightness`: sets the brightness of enemy pilot and titan lights if `rgb_enemy_enabled` is `1`.
+`rgb_enemy_brightness`: sets the brightness of enemy pilot and titan lights if `rgb_enemy_rainbow` is `1`.
