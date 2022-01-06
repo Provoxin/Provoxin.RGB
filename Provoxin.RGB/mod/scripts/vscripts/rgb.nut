@@ -15,50 +15,55 @@ void function rgb()
 	float dg = 0;
 	float db = 0;
 
+	float lastTime = Time();
 
 	while (true)
 	{
-		WaitFrame()    
-		float speed = GetConVarFloat("rgb_cycle_speed") / 100;
+		WaitFrame();
+		
+		float dt = Time() - lastTime;
+		lastTime = Time();
+
+		float speed = GetConVarFloat("rgb_cycle_speed");
 
 		if (r == 1 && g == 0 && b == 0)
 		{
-			dr = 0; dg = speed; db = 0;
+			dr = 0; dg = 1; db = 0;
 		}
 
 		else if (r == 1 && g == 1 && b == 0)
 		{
-			dr = -speed; dg = 0; db = 0;
+			dr = -1; dg = 0; db = 0;
 		}
 
 		else if (r == 0 && g == 1 && b == 0)
 		{
-			dr = 0; dg = 0; db = speed;
+			dr = 0; dg = 0; db = 1;
 		}
 
 		else if (r == 0 && g == 1 && b == 1)
 		{
-			dr = 0; dg = -speed; db = 0;
+			dr = 0; dg = -1; db = 0;
 		}
 
 		else if (r == 0 && g == 0 && b == 1)
 		{
-			dr = speed; dg = 0; db = 0;
+			dr = 1; dg = 0; db = 0;
 		}
 
 		else if (r == 1 && g == 0 && b == 1)
 		{
-			dr = 0; dg = 0; db = -speed;
+			dr = 0; dg = 0; db = -1;
 		}
 
 		else if (r > 0 && g > 0 && b > 0)
 		{
-			dr = speed; dg = -speed; db = -speed;
+			dr = 1; dg = -1; db = -1;
 		}
 
-		r += dr;
-		g += dg;
-		b += db;
+		r += dr * speed * dt;
+		g += dg * speed * dt;
+		b += db * speed * dt;
 
 		r = clamp(r, 0, 1);
 		g = clamp(g, 0, 1);
