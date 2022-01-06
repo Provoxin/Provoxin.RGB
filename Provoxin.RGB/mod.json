@@ -1,0 +1,47 @@
+{
+	"Name": "RGB Pilots",
+	"Description": "Cycles pilot and titan lights through all hues",
+	"LoadPriority": 0,
+	"RequiredOnClient": false,
+	"Version": "1.0",
+	
+	"Scripts": [
+		{
+			"Path": "rgb.nut",
+			"RunOn": "CLIENT",
+			"ClientCallback": {
+				"After": "rgb_init"
+			}
+		}
+	],
+	"ConVars": [
+		{
+			"Name": "rgb_ally_color",  // ally color when cycling is disabled
+			"DefaultValue": "0.34 0.59 0.86 8"
+		},
+		{
+			"Name": "rgb_enemy_color",  // enemy color when cycling is disabled
+			"DefaultValue": "0.8 0.25 0.15 8"
+		},
+		{
+			"Name": "rgb_ally_enabled",  // whether allies will cycle through colors
+			"DefaultValue": "1"
+		},
+		{
+			"Name": "rgb_enemy_enabled",  // whether enemies will cycle through colors
+			"DefaultValue": "1"
+		},
+		{
+			"Name": "rgb_cycle_speed",  // speed at which colors are cycled through
+			"DefaultValue": "1"
+		},
+		{
+			"Name": "rgb_ally_brightness",  // brightness of ally lights (if cycling through colors)
+			"DefaultValue": "8"
+		},
+		{
+			"Name": "rgb_enemy_brightness",  // brightness of enemy lights (if cycling through colors)
+			"DefaultValue": "8"
+		}
+	]
+}
