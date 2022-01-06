@@ -3,6 +3,8 @@ RGB pilot and titan lights mod for Titanfall 2 Northstar
 
 Edit mod.json so you don't have to set params every time you launch!
 
+Only works with colorblind mode disabled.
+
 convars (press ~ to open the console and set these in real time):
 
 `rgb_ally_color`: sets the lights color of allied pilots and titans. takes r, g, b as a value from 0-1, and brightness. Example: `rgb_ally_color 1 0 1 20` (bright magenta); `rgb_ally_color default` will set light colors to default.
