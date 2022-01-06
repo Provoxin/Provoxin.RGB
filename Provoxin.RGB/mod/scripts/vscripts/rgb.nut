@@ -88,7 +88,7 @@ void function rgb()
 		{
 			string col = GetConVarString("rgb_enemy_color");
 			if (col == "default") { col = "0.8 0.25 0.15 8"; }
-			SetConVarString("idcolor_ally", col)
+			SetConVarString("idcolor_enemy", col)
 		}
 	}
 }

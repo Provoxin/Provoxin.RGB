@@ -3,7 +3,7 @@
 	"Description": "Cycles pilot and titan lights through all hues",
 	"LoadPriority": 0,
 	"RequiredOnClient": false,
-	"Version": "1.1",
+	"Version": "1.2",
 	
 	"Scripts": [
 		{
