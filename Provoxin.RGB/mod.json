@@ -17,11 +17,11 @@
 	"ConVars": [
 		{
 			"Name": "rgb_ally_color",  // ally color when cycling is disabled
-			"DefaultValue": "0.34 0.59 0.86 8"
+			"DefaultValue": "default"
 		},
 		{
 			"Name": "rgb_enemy_color",  // enemy color when cycling is disabled
-			"DefaultValue": "0.8 0.25 0.15 8"
+			"DefaultValue": "default"
 		},
 		{
 			"Name": "rgb_ally_rainbow",  // whether allies will cycle through colors

@@ -5,6 +5,9 @@ void function rgb_init()
 	thread rgb()
 }
 
+const array<string> DEFAULT_ALLY_COLORS = [ "0.34 0.59 0.86 8", "0.24 0.50 0.96 8", "0.0 0.58 0.77 8", "0.28 0.52 0.97 8" ];
+const array<string> DEFAULT_ENEMY_COLORS = [ "0.8 0.25 0.15 8", "0.89 0.78 0.0 8", "1.0 0.627 0.68 8", "0.82 0.74 0.06 8" ];
+
 void function rgb()
 {
 	float r = 1;
@@ -69,26 +72,29 @@ void function rgb()
 		g = clamp(g, 0, 1);
 		b = clamp(b, 0, 1);
 
+		int cbMode = GetConVarInt("colorblind_mode");
+		string conVarSuffix = (cbMode != 0) ? "_cb" + cbMode : "";
+		
 		if (GetConVarBool("rgb_ally_rainbow"))
 		{
-			SetConVarString("idcolor_ally", r + " " + g + " " + b + " " + GetConVarString("rgb_ally_brightness"));
+			SetConVarString("idcolor_ally" + conVarSuffix, r + " " + g + " " + b + " " + GetConVarString("rgb_ally_brightness"));
 		}
 		else
 		{
 			string col = GetConVarString("rgb_ally_color");
-			if (col == "default") { col = "0.34 0.59 0.86 8"; }
-			SetConVarString("idcolor_ally", col)
+			if (col == "default") { col = DEFAULT_ALLY_COLORS[cbMode]; }
+			SetConVarString("idcolor_ally" + conVarSuffix, col)
 		}
 
 		if (GetConVarBool("rgb_enemy_rainbow"))
 		{
-			SetConVarString("idcolor_enemy", r + " " + g + " " + b + " " + GetConVarString("rgb_enemy_brightness"));
+			SetConVarString("idcolor_enemy" + conVarSuffix, r + " " + g + " " + b + " " + GetConVarString("rgb_enemy_brightness"));
 		}
 		else
 		{
 			string col = GetConVarString("rgb_enemy_color");
-			if (col == "default") { col = "0.8 0.25 0.15 8"; }
-			SetConVarString("idcolor_enemy", col)
+			if (col == "default") { col = DEFAULT_ENEMY_COLORS[cbMode]; }
+			SetConVarString("idcolor_enemy" + conVarSuffix, col)
 		}
 	}
 }
